@@ -97,6 +97,7 @@ if (exchange==1):
 	bittrexbalance = api.getbalance(currency)
 	print 'Your Balance for {0} is {1}'.format(currency, bittrexbalance)
 	print 'Placing sell order @ {0} {1} for {2} {3}'.format(sellprice, trade, bittrexbalance, currency)
+	api.selllimit(market, bittrexbalance, sellprice)
 elif (exchange==2):
 	allpolobalance = conn.api_query('returnBalances')
 	polobalance = allpolobalance[currency]
